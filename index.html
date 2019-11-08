@@ -1,5 +1,16 @@
 <html>
-<body>
-TEST
-</body>
+  <script>
+    fetch('https://your-service-name.microcms.io/api/v1/news/content-name', {
+      headers: { 'X-API-KEY': '8685c382-4c23-4393-8098-e5d8414866de' }
+    })
+      .then(res => res.json())
+      .then(result => {
+      document.title = result.title;
+      document.getElementById('content').innerHTML = result.body;
+    });
+  </script>
+  <body>
+    <p>TEST</p>
+    <div id=content>
+  </body>
 </html>
